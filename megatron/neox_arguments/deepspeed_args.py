@@ -331,6 +331,11 @@ class NeoXArgsDeepspeedRunner(NeoXArgsTemplate):
     Launcher backend for multi-node training. Options currently include PDSH, OpenMPI, MVAPICH.
     """
 
+    launcher_args: str = ""
+    """
+    Adds a `--launcher_args` to the DeepSpeed launch command. In DeeperSpeed this is passed on to the SlurmLauncher as well. Sometimes needed for SLURM plugins like pyxis.
+    """
+
     force_multi: bool = False
     """
     Force multi-node training even if only one node is specified.

@@ -2254,7 +2254,11 @@ Args for deepspeed runner (deepspeed.launcher.runner).
 
     Launcher backend for multi-node training. Options currently include PDSH, OpenMPI, MVAPICH.
 
+- **launcher_args**: str
 
+    Default = ""
+
+    Adds a `--launcher_args` to the DeepSpeed launch command. In DeeperSpeed this is passed on to the SlurmLauncher as well. Sometimes needed for SLURM plugins like pyxis.
 
 - **force_multi**: bool
 

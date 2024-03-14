@@ -501,6 +501,12 @@ class NeoXArgs(*BASE_CLASSES):
                     self.convert_key_value_to_command_line_arg(key, configured_value)
                 )
 
+        launcher_args = getattr(self, "launcher_args")
+        if launcher_args:
+            args_list.extend(
+                self.convert_key_value_to_command_line_arg("launcher_args", launcher_args)
+            )
+
         if self.deepspeed_slurm:
             comment = getattr(self, "comment")
             if comment:
